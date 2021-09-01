@@ -5,7 +5,7 @@ import EmpTable from './components/EmpTable.js';
 
 function App() {
   return (
-    <div className='d-flex flex-column'>
+    <div className='container d-flex flex-column'>
       <Header />
       <InputContainer />
       <EmpTable />
