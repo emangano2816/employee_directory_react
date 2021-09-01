@@ -6,7 +6,7 @@ class InputDetail extends Component {
     render() {
         return (
             <form className='d-flex flex-row justify-content-even'>
-                <select id='sort' name='sort'>
+                <select name='sort' id='sort' >
                     <option value='' selected disabled hidden>Sort Order</option>
                     <option value='lastname'>Last Name</option>
                     <option value='email'>Email Address</option>
