@@ -8,6 +8,7 @@ import API from '../utils/API.js';
 class Main extends React.Component {
 
     state = {
+        sortChoice: '',
         results:[]
     };
 
@@ -24,13 +25,29 @@ class Main extends React.Component {
       .catch(err => console.log(err));
   };
 
-  
+  handleSortChange = event => {
+      console.log('sort change function');
+      console.log(event.target);
+      console.log(event.target.value)
+      const value = event.target.value;
+      this.setState({
+          sortChoice: value, 
+      })
+      this.state.results.sort(function(a,b) {
+          if (a[event.target.value] > b[event.target.value]) {
+              return 1;
+            } else if (a[event.target.value] < b[event.target.value]) {
+                return -1;
+            }  return 0;
+        })
+    };
 
+  
     render() {
         return (
             <div className='container d-flex flex-column'>
               <Header />
-              <InputContainer />
+              <InputContainer handleSortChange={this.handleSortChange}/>
               <EmpTable results={this.state.results}/>
             </div>
         );
