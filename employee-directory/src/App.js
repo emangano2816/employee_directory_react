@@ -1,15 +1,10 @@
-import Header from './components/Header.js'
-import InputContainer from './components/InputContainer.js';
-import EmpTable from './components/EmpTable.js';
+import React from "react";
+import Main from "./components/Main.js";
 
 
 function App() {
   return (
-    <div className='container d-flex flex-column'>
-      <Header />
-      <InputContainer />
-      <EmpTable />
-    </div>
+      <Main />
   );
 }
 
