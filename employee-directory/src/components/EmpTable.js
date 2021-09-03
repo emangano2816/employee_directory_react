@@ -1,8 +1,7 @@
 import React from "react";
-import randomUser from '../randomUser.json';
 
+function EmpTable (props) {
 
-function EmpTable () {
     return (
         <table className='table-striped table-bordered'>
            <thead className='thead-dark'>
@@ -16,14 +15,17 @@ function EmpTable () {
                </tr>
            </thead>
            <tbody>
-               <tr>
-                   <td>{randomUser[0].results[0].name.last}</td>
-                   <td>{randomUser[0].results[0].name.first}</td>
-                   <td>{randomUser[0].results[0].email}</td>
-                   <td>{randomUser[0].results[0].gender}</td>
-                   <td>{randomUser[0].results[0].phone}</td>
-                   <td>{randomUser[0].results[0].location.postcode}</td>
-               </tr>
+            {props.results.map((employee, index) => 
+                        <tr key={index}>
+                           <td>{employee.name.last}</td>
+                           <td>{employee.name.first}</td>
+                           <td>{employee.email}</td>
+                           <td>{employee.gender}</td>
+                           <td>{employee.phone}</td>
+                           <td>{employee.location.postcode}</td>
+                       </tr>
+            )}
+
            </tbody>
        </table>
     )

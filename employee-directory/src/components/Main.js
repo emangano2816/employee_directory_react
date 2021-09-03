@@ -7,30 +7,31 @@ import API from '../utils/API.js';
 
 class Main extends React.Component {
 
-//     state = {
-//         results:[]
-//     };
+    state = {
+        results:[]
+    };
 
-//  // When this component mounts, search the Giphy API for pictures of kittens
-//  componentDidMount() {
-//     this.searchGiphy("results=5");
-//   }
+ // When this component mounts, search the Giphy API for pictures of kittens
+ componentDidMount() {
+    this.searchAPI("&results=10");
+  }
 
-//   searchAPI = query => {
-//     API.search(query)
-//       .then(res => {
-//           console.log(res);
-//           this.setState({ results: res.data.data })})
-//       .catch(err => console.log(err));
+  searchAPI = query => {
+    API.search(query)
+      .then(res => {
+          console.log(res.data.results);
+          this.setState({ results: res.data.results })})
+      .catch(err => console.log(err));
+  };
 
-//   };
+  
 
     render() {
         return (
             <div className='container d-flex flex-column'>
               <Header />
               <InputContainer />
-              <EmpTable />
+              <EmpTable results={this.state.results}/>
             </div>
         );
 
