@@ -3,7 +3,8 @@ import React from "react";
 function EmpTable (props) {
 
     return (
-        <table className='table-striped table-bordered'>
+        <div className='table-responsive align-self-center'>
+        <table className='table table-striped table-bordered table-hover w-auto'>
            <thead className='thead-dark'>
                <tr>
                    <th>Last Name</th>
@@ -16,18 +17,19 @@ function EmpTable (props) {
            </thead>
            <tbody>
             {props.results.map((employee, index) => 
-                        <tr key={index}>
-                           <td>{employee.name.last}</td>
-                           <td>{employee.name.first}</td>
-                           <td>{employee.email}</td>
-                           <td>{employee.gender}</td>
-                           <td>{employee.phone}</td>
-                           <td>{employee.location.postcode}</td>
-                       </tr>
+                <tr key={index}>
+                    <td>{employee.name.last}</td>
+                    <td>{employee.name.first}</td>
+                    <td>{employee.email}</td>
+                    <td>{employee.gender}</td>
+                    <td>{employee.phone}</td>
+                    <td>{employee.location.postcode}</td>
+                </tr>
             )}
 
            </tbody>
        </table>
+       </div>
     )
 
 }

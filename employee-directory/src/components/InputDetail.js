@@ -1,24 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-class InputDetail extends Component {
-
-         
-
-    render() {
-
-        return (
-            <form className='d-flex flex-row justify-content-even'>
-                <select name='sort' id='sort' >
-                    <option value=''>Sort Order</option>
-                    <option value='lastname'>Last Name</option>
-                    <option value='email'>Email Address</option>
-                    <option value='zip'>Zipcode</option>
-                </select>
-                <button className='w-25 ml-3'>Sort</button>
-            </form>
-        )
-    }
+function InputDetail(props) {
+    console.log(props)
+    return (
+        <form className='d-flex flex-row justify-content-even m-3'>
+            <select name={props.type} id={props.type} >
+                <option value={props.defaultVal}>{props.defaultDesc}</option>
+                <option value={props.val1}>{props.val1Desc}</option>
+                <option value={props.val2}>{props.val2Desc}</option>
+                <option value={props.val3}>{props.val3Desc}</option>
+            </select>
+        </form>
+    )
 }
 
 export default InputDetail;

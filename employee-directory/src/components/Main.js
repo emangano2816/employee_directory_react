@@ -11,7 +11,7 @@ class Main extends React.Component {
         results:[]
     };
 
- // When this component mounts, search the Giphy API for pictures of kittens
+ // When this component mounts, search the randomuser API for 10 users
  componentDidMount() {
     this.searchAPI("&results=10");
   }
