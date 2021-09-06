@@ -9,6 +9,7 @@ class Main extends React.Component {
 
     state = {
         sortChoice: '',
+        filterChoice: '',
         results:[]
     };
 
@@ -27,7 +28,6 @@ class Main extends React.Component {
 
   handleSortChange = event => {
       console.log('sort change function');
-      console.log(event.target);
       console.log(event.target.value)
       const value = event.target.value;
       this.setState({
@@ -42,12 +42,21 @@ class Main extends React.Component {
         })
     };
 
+    handleFilterChange = event => {
+        console.log('filter change function');
+        console.log(event.target.value);
+        const value_filter = event.target.value;
+        this.setState({
+            filterChoice: value_filter,
+        })
+    }
+
   
     render() {
         return (
             <div className='container d-flex flex-column'>
               <Header />
-              <InputContainer handleSortChange={this.handleSortChange}/>
+              <InputContainer handleSortChange={this.handleSortChange} handleFilterChange={this.handleFilterChange}/>
               <EmpTable results={this.state.results}/>
             </div>
         );
