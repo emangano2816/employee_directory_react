@@ -67,8 +67,8 @@ class Main extends React.Component {
         this.setState({
             filterChoice: value_filter,
             results: this.state.base_results
-        }, this.filterData(event))
-        // this.filterData(event);
+        })
+        this.filterData(event);
     }
 
     filterData(event) {

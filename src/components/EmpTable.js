@@ -7,6 +7,7 @@ function EmpTable (props) {
         <table className='table table-striped table-bordered table-hover w-auto'>
            <thead className='thead-dark'>
                <tr>
+                   <th>Employee</th>
                    <th>Last Name</th>
                    <th>First Name</th>
                    <th>Email</th>
@@ -18,6 +19,7 @@ function EmpTable (props) {
            <tbody>
             {props.results.map((employee, index) => 
                 <tr key={index}>
+                    <td><img src={employee.picture.thumbnail} alt="employee" height={100} width={100}></img></td>
                     <td>{employee.name.last}</td>
                     <td>{employee.name.first}</td>
                     <td>{employee.email}</td>

@@ -1,6 +1,6 @@
 {
-  "homepage":"http//emangano2816.github.io/employee_directory_react/",
-  "name": "employee-directory",
+  "homepage":"http//emangano2816.github.io/employee_directory_react",
+  "name": "employee_directory_react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
