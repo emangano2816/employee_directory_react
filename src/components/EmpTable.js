@@ -1,39 +1,36 @@
 import React from "react";
+import '../styles/EmpTable.css'
 
 function EmpTable (props) {
 
     return (
-        <div className='table-responsive align-self-center'>
-            <table className='table table-striped table-bordered table-hover table-sm w-auto'>
-            <thead>
-                <tr>
-                    <th>Employee</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Phone</th>
-                    <th>Zipcode</th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.results.map((employee, index) => 
-                    <tr key={index}>
-                        <td><img src={employee.picture.thumbnail} alt="employee" height={100} width={100}></img></td>
-                        <td>{employee.name.last}</td>
-                        <td>{employee.name.first}</td>
-                        <td>{employee.email}</td>
-                        <td>{employee.gender}</td>
-                        <td>{employee.phone}</td>
-                        <td>{employee.location.postcode}</td>
+            <table>
+                <caption>Employee Tracker</caption>
+                <thead>
+                    <tr>
+                        <th scope='col'>Employee</th>
+                        <th scope='col'>Last Name</th>
+                        <th scope='col'>First Name</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Gender</th>
+                        <th scope='col'>Phone</th>
                     </tr>
-                )}
+                </thead>
+                <tbody>
+                    {props.results.map((employee, index) => 
+                        <tr key={index}>
+                            <td scope='row' data-label='Employee'><img src={employee.picture.thumbnail} alt="employee" height={100} width={100}></img></td>
+                            <td data-label='Last Name'>{employee.name.last}</td>
+                            <td data-label='First Name'>{employee.name.first}</td>
+                            <td data-label='Email'>{employee.email}</td>
+                            <td data-label='Gender'>{employee.gender}</td>
+                            <td data-label='Phone'>{employee.phone}</td>
+                        </tr>
+                    )}
 
-            </tbody>
-        </table>
-        </div>
-    )
-
+                </tbody>
+            </table>
+        )
 }
 
 
