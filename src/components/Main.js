@@ -31,32 +31,46 @@ class Main extends React.Component {
         const value = event.target.value;
         this.setState({
             sortChoice: value, 
-            base_results: this.state.results
         })
-        //sort data by selected drop-down value
-        this.state.results.sort(function(a,b) {
-            if(event.target.value==='last') {
-                    if (a.name.last > b.name.last) {
-                        return 1;
-                    } else if (a.name.last < b.name.last) {
-                        return -1;
-                    } return 0;
-                } else if (event.target.value==='zipcode') {
-                    if (a.location.postcode > b.location.postcode) {
-                        return 1;
-                    } else if (a.location.postcode < b.location.postcode) {
-                        return -1;
-                    }  return 0;
-                } else {
-                    if (a[event.target.value] > b[event.target.value]) {
-                        return 1;
-                    } else if (a[event.target.value] < b[event.target.value]) {
-                        return -1;
-                    }  return 0;
-                }
+        console.log(this.state.results)
+        this.sortData(event.target.value);
 
-            })
-        };
+        if (this.state.filterChoice===''){
+            return;
+        } else {
+            this.filterData(this.state.filterChoice, this.state.results);
+        }
+    };
+
+    //sort by last name or email
+    sortData(event) {
+        console.log('sortData fuction called')
+        console.log(this.state.results)
+        console.log(this.state.sortChoice)
+        this.state.results.sort(function(a,b) {
+            if(event==='last') {
+                if (a.name.last > b.name.last) {
+                    return 1;
+                } else if (a.name.last < b.name.last) {
+                    return -1;
+                } return 0;
+            } else if (event==='zipcode') {
+                if (a.location.postcode > b.location.postcode) {
+                    return 1;
+                } else if (a.location.postcode < b.location.postcode) {
+                    return -1;
+                }  return 0;
+            } else {
+                console.log('sort by email')
+                if (a[event] > b[event]) {
+                    return 1;
+                } else if (a[event] < b[event]) {
+                    return -1;
+                }  return 0;
+            }
+        })
+        console.log(this.state.results);
+    };
 
     //handle change to filter drop-down
     handleFilterChange = event => {
@@ -65,19 +79,27 @@ class Main extends React.Component {
         this.setState({
             filterChoice: value_filter,
         })
-        this.filterData(event);
+        this.filterData(event.target.value, this.state.base_results);
+
+        if (this.state.sortChoice==='') {
+            return;
+        } else {
+            this.sortData(this.state.sortChoice);
+        }
     }
 
     //filter by gender
-    filterData(event) {
-        console.log('filterData function called')
-        if (event.target.value==='female') {
-            const filteredArray = this.state.base_results.filter(gender => gender.gender === 'female');
+    filterData(event, results) {
+        console.log('filterData function called');
+        console.log(event);
+        if (event==='female') {
+            const filteredArray = results.filter(gender => gender.gender === 'female');
             this.setState({results: filteredArray});
-        } else if (event.target.value==='male') {
-            const filteredArray = this.state.base_results.filter(gender => gender.gender === 'male');
+        } else if (event==='male') {
+            const filteredArray = results.filter(gender => gender.gender === 'male');
             this.setState({results: filteredArray})
         } else {
+            console.log(results)
             this.setState({results: this.state.base_results});
         }
     }
