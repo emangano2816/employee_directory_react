@@ -7,11 +7,6 @@ table {
     table-layout:auto;
 }
 
-table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
-}
-
 table tr {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
@@ -34,10 +29,6 @@ table th {
 @media screen and (max-width: 815px) {
   table {
     border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
   }
   
   table thead {

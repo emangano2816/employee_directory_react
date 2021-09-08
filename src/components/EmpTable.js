@@ -5,7 +5,6 @@ function EmpTable (props) {
 
     return (
             <table>
-                <caption>Employee Tracker</caption>
                 <thead>
                     <tr>
                         <th scope='col'>Employee</th>

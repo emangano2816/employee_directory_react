@@ -107,7 +107,7 @@ class Main extends React.Component {
     render() {
         console.log(this.state.results);
         return (
-            <div className='d-flex flex-column justify-content-center w-100'>
+            <div className='w-100'>
               <Header />
               <InputContainer handleSortChange={this.handleSortChange} handleFilterChange={this.handleFilterChange}/>
               <EmpTable results={this.state.results}/>
