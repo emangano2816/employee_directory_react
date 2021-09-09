@@ -32,9 +32,9 @@ class Main extends React.Component {
         this.setState({
             sortChoice: value, 
         })
-        console.log(this.state.results)
         this.sortData(event.target.value);
 
+        //handle filter of sorted data if filterChoice is not null
         if (this.state.filterChoice===''){
             return;
         } else {
@@ -45,8 +45,6 @@ class Main extends React.Component {
     //sort by last name or email
     sortData(event) {
         console.log('sortData fuction called')
-        console.log(this.state.results)
-        console.log(this.state.sortChoice)
         this.state.results.sort(function(a,b) {
             if(event==='last') {
                 if (a.name.last > b.name.last) {
@@ -81,6 +79,7 @@ class Main extends React.Component {
         })
         this.filterData(event.target.value, this.state.base_results);
 
+        //handle sort of filtered data if sortChoice is not null
         if (this.state.sortChoice==='') {
             return;
         } else {
@@ -91,7 +90,6 @@ class Main extends React.Component {
     //filter by gender
     filterData(event, results) {
         console.log('filterData function called');
-        console.log(event);
         if (event==='female') {
             const filteredArray = results.filter(gender => gender.gender === 'female');
             this.setState({results: filteredArray});
