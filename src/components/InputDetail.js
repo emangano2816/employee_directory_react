@@ -2,7 +2,6 @@ import React from "react";
 
 
 function InputDetail(props) {
-    console.log(props)
     return (
         <form className='m-3'>
             <select name={props.type} id={props.type} onChange={props.onChange}>
