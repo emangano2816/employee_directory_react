@@ -18,11 +18,11 @@ SO THAT I have quick access to their information.
 ## Summary of Application Functionality
 The Employee Directory application was built using React.  
 
-The application provides a list of employees (sourced from the Random User API).  Employee information, including a profile picture, last and first name, email address, gender, phone, and zipcode is displayed in a table on the page.  The user is able to sort the data by last name, email, or zipcode and is able to filter the data by gender.
+The application provides a list of employees (sourced from the Random User API).  Employee information, including a profile picture, last and first name, email address, gender, and phone number is displayed in a table on the page.  The user is able to sort the data by last name and email and is able to filter the data by gender.
     
 ## Application Demo
 
-
+![employee_tracker_react](https://user-images.githubusercontent.com/79860046/132694241-263e754e-c780-4f4a-a79a-a467cb223bb2.gif)
 
 ## Tecnhologies Used
 1. React
