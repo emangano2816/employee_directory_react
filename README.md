@@ -22,7 +22,7 @@ The application provides a list of employees (sourced from the Random User API).
     
 ## Application Demo
 
-![employee_tracker_react](https://user-images.githubusercontent.com/79860046/132694241-263e754e-c780-4f4a-a79a-a467cb223bb2.gif)
+![employee_directory_react](https://user-images.githubusercontent.com/79860046/132695896-d7134df8-b55e-4b4e-9879-aabdad32654a.gif)
 
 ## Tecnhologies Used
 1. React
